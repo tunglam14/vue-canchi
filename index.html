@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CanChi in VueJS</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+      <h2>{{ title }}</h2>
+
+      <h3>{{ message }}</h3>
+      <button v-on:click="reverseMessage">Reverse!</button>
+      <input v-model="message">
+
+      <h3 v-on:>Year: {{ year }} - {{ canchi }}</h3>
+      <input v-model="year">
+
+      <h3>Thiên Can</h3>
+      <ol start="0">
+          <li v-for="can in cans">{{ can }}</li>
+      </ol>
+
+      <h3>Địa Chi</h3>
+      <ol start="0">
+          <li v-for="chi in chis">{{ chi }}</li>
+      </ol>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        seen: true,
+        title: "PyMI.vn can chi",
+        message: 'Hello VueJS https://vuejs.org/',
+        year: (new Date()).getFullYear(),
+        other: 'Other msg',
+        cans: ["Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ"],
+        chis: ["Thân", "Dậu", "Tuất", "Hợi", "Tí", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi"]
+      },
+      methods: {
+        reverseMessage: function () {
+          this.message = this.message.split('').reverse().join('')
+        }
+      },
+      computed: {
+        canchi: function() {
+            return this.cans[this.year % 10] + " " + this.chis[this.year % 12]
+        }
+      }
+
+    });
+  </script>
+</body>
+</html>
