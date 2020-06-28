@@ -3,14 +3,13 @@
 <head>
   <title>CanChi in VueJS</title>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.0/milligram.css">
 </head>
 <body>
   <div id="app">
       <h2>{{ title }}</h2>
-
-      <h3>{{ message }}</h3>
-      <button v-on:click="reverseMessage">Reverse!</button>
-      <input v-model="message">
 
       <h3 v-on:>Year: {{ year }} - {{ canchi }}</h3>
       <input v-model="year">
@@ -24,6 +23,10 @@
       <ol start="0">
           <li v-for="chi in chis">{{ chi }}</li>
       </ol>
+
+      <h3>{{ message }}</h3>
+      <button v-on:click="reverseMessage">Reverse!</button>
+      <input v-model="message">
   </div>
 
   <script>
