@@ -14,7 +14,7 @@
   <div id="app" class="container">
       <h2>{{ title }}</h2>
 
-      <h3 v-on:>Year: {{ year }} - {{ canchi }}</h3>
+      <h3>Year: {{ year }} - {{ canchi }}</h3>
       <input v-model="year">
 
       <h3>Thiên Can</h3>
@@ -38,11 +38,9 @@
     var app = new Vue({
       el: '#app',
       data: {
-        seen: true,
         title: "PyMI.vn can chi",
         message: 'Hello VueJS https://vuejs.org/',
         year: (new Date()).getFullYear(),
-        other: 'Other msg',
         cans: ["Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ"],
         chis: ["Thân", "Dậu", "Tuất", "Hợi", "Tí", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi"]
       },
